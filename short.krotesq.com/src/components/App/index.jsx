@@ -1,14 +1,12 @@
 import Header from '../Header'
-import Shortener from '../Shortener'
-import Footer from '../Footer'
 import './index.css'
+import Box from '../Box'
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Shortener/>
-      <Footer/>
+      <Box/>
     </div>
   )
 }
