@@ -14,7 +14,7 @@ h1 {
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     list-style: none;
     width: 100%;
 }
