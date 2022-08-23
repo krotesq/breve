@@ -9,7 +9,13 @@
 
 h1 {
     text-align: center;
+    font-style: italic;
     font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
 }
 
 ul {
@@ -21,6 +27,11 @@ ul {
 }
 
 a {
-    color: white;
+    color: rgb(122, 122, 122);
     text-decoration: none;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
 }
