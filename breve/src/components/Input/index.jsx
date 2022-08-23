@@ -26,7 +26,7 @@ const Input = () => {
         <form onSubmit={handleFormSubmit}>
             <input type="text" name="url" id="url" placeholder='Enter a link..' value={inputValue} onChange={handleInputChange}/>
             <motion.input type='button' value='Paste from clipboard' onClick={async () => {await handlePasteClick()}} whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
-            <motion.input type='submit' value="GO!" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
+            <motion.input type='submit' value="MAKE IT SMALL!" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
         </form>
     </motion.div>
   )
