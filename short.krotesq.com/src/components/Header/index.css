@@ -4,11 +4,12 @@
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    height: 35%;
 }
 
 h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 ul {
