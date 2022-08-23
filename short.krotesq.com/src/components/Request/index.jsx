@@ -18,7 +18,7 @@ const Request = () => {
       return;
     }
     sleep(2000).then(() => {
-      navigate('/result', {state: {shortUrl: 'tesq.io/t3s65'}});
+      navigate('/result', {state: {url: data.url}})
     })
   })
 
