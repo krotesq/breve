@@ -1,0 +1,15 @@
+.Loading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.circle {
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+}
