@@ -16,6 +16,7 @@ const Box = () => {
           </Routes>
         </Router>
       <a href="#" id='report'>Report a problem</a>
+      <p>Made with ♥ by <a href="https://github.com/aaronlyy" className='inlineHref'>aaronlyy</a> &amp; <a href="https://github.com/6senit" className='inlineHref'>6senit</a></p>
     </motion.div>
   )
 }

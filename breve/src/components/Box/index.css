@@ -14,6 +14,10 @@
     color: #EB5545;
 }
 
+.inlineHref {
+    color: white;
+}
+
 @media ( min-width: 1024px ) {
     .Box {
         padding: 0 5rem;
