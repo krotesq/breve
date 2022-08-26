@@ -18,13 +18,14 @@ const Input = () => {
   }
 
   const handleFormSubmit = (e) => {
+    e.preventDefault();
     navigate('/result', {state: {url: inputUrl}})
   }
 
   return (
     <motion.div className='Input' initial={{opacity: 0}} animate={{opacity: 1}}>
         <form onSubmit={handleFormSubmit}>
-            <input type="text" name="url" id="url" placeholder='Enter a link..' value={inputUrl} onChange={handleInputChange}/>
+            <input type="text" name="url" id="url" placeholder='Enter a link..' value={inputUrl} onChange={handleInputChange} required autoComplete="off"/>
             <motion.input type='button' value='Paste from clipboard' onClick={async () => {await handlePasteClick()}} whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
             <motion.input type='submit' value="MAKE IT SMALL!" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
         </form>

@@ -7,10 +7,12 @@
     height: 35%;
 }
 
-.Header h1 {
+#home {
+    color: white;
     text-align: center;
     font-style: italic;
     font-size: 4rem;
+    text-decoration: none;
 }
 
 .Header h2 {
@@ -27,12 +29,12 @@ ul {
     width: 100%;
 }
 
-a {
+#back {
     color: rgb(122, 122, 122);
     text-decoration: none;
 }
 
-a:hover {
+#back:hover {
     color: rgb(255, 255, 255);
     text-decoration: underline;
 }
