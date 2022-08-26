@@ -9,6 +9,12 @@ form {
     width: 100%;
 }
 
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    }
+
 input[type=text] {
     width: 80%;
     height: 2.5rem;
