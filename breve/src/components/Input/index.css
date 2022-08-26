@@ -10,7 +10,7 @@ form {
 }
 
 input[type=text] {
-    width: 95%;
+    width: 80%;
     height: 2.5rem;
     font-size: 1rem;
     border-radius: 10px;
@@ -22,18 +22,8 @@ input[type=text] {
     outline: none;
 }
 
-input[type=submit] {
-    margin-top: 4rem;
-    width: 50%;
-    height: 2rem;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    background-color: #3B82F7;
-}
-
 input[type=button] {
-    width: 95%;
+    width: 80%;
     height: 2.8rem;
     font-size: 1rem;
     border-radius: 10px;
@@ -41,3 +31,15 @@ input[type=button] {
     border: none;
     color: white;
 }
+
+
+input[type=submit] {
+    margin-top: 1rem;
+    width: 80%;
+    height: 2.8rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #3B82F7;
+}
+
