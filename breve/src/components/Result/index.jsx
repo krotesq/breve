@@ -8,19 +8,11 @@ const Result = () => {
   const navigate = useNavigate();
   const data = location.state;
 
-  const [shortUrl, setShortUrl] = useState('');
-
-  useEffect(() => {
-    if (data == null) {
-      navigate('/');
-      return;
-    }
-    setShortUrl(data.url);
-  })
+  const [response, setResponse] = useState({shortUrl: 'test'});
 
   return (
     <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
-        <h2>Short URL: {shortUrl}</h2>
+        <h2>Short URL: {response.shortUrl}</h2>
     </motion.div>
   )
 }

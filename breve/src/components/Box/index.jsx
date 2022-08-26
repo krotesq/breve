@@ -2,7 +2,6 @@ import React from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Input from '../Input'
-import Request from '../Request'
 import Result from '../Result'
 
 import './index.css'
@@ -13,7 +12,6 @@ const Box = () => {
         <Router>
           <Routes>
             <Route path='/' element={<Input/>}/>
-            <Route path='/request' element={<Request/>}/>
             <Route path='/result' element={<Result/>}/>
           </Routes>
         </Router>
