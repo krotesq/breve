@@ -1,11 +1,13 @@
 import {React, useState} from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from "react-router-dom";
+import isURL from 'validator/lib/isURL'
 import './index.css'
 
 const Input = () => {
 
   const [inputUrl, setInputUrl] = useState('');
+  const [headline, setHeadline] = useState('Enter your link!');
   const navigate = useNavigate();
 
   const handlePasteClick = async () => {
@@ -19,17 +21,21 @@ const Input = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    navigate('/result', {state: {url: inputUrl}})
+    if (isURL(inputUrl)) {
+      navigate('/result', {state: {url: inputUrl}})
+    }
+    setHeadline('Please put in a valid URL!');
   }
 
   return (
-    <motion.div className='Input' initial={{opacity: 0}} animate={{opacity: 1}}>
-        <form onSubmit={handleFormSubmit}>
-            <input type="text" name="url" id="url" placeholder='Enter a link..' value={inputUrl} onChange={handleInputChange} required autoComplete="off"/>
-            <motion.input type='button' value='Paste from clipboard' onClick={async () => {await handlePasteClick()}} whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
-            <motion.input type='submit' value="Submit" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
-        </form>
-    </motion.div>
+    <div className='Input'>
+      <h3 className='Input__headline'>{headline}</h3>
+      <form onSubmit={handleFormSubmit}>
+          <input type="text" name="url" id="url" placeholder='Enter a link..' value={inputUrl} onChange={handleInputChange} required autoComplete="off"/>
+          <motion.input type='button' value='Paste from clipboard' onClick={async () => {await handlePasteClick()}} whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
+          <motion.input type='submit' value="Submit" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
+      </form>
+    </div>
   )
 }
 
