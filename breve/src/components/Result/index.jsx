@@ -7,16 +7,18 @@ const Result = () => {
   const location = useLocation();
   const data = location.state;
 
-  const endpoint = "http://localhost:3001/v1/short";
+  const endpoint = "http://127.0.0.1:3001/v1/short";
   const body = JSON.stringify({
     url: data.url
   });
 
   const [response, setResponse] = useState({});
 
+  // "https://jsonplaceholder.typicode.com/posts"
+
   useEffect(() => {
   fetch(
-    "https://jsonplaceholder.typicode.com/posts",
+    endpoint,
     {
       method: 'POST',
       body,
@@ -27,11 +29,11 @@ const Result = () => {
   .then(res => {
     setResponse(res);
   })
-})
+}, [])
 
   return (
     <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
-        <h2>Short URL: {response.url}</h2>
+        <h2>Short URL: {response.short_url}</h2>
     </motion.div>
   )
 }
