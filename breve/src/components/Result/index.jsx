@@ -1,11 +1,16 @@
 import {React, useEffect, useState} from 'react'
 import {motion} from 'framer-motion'
-import { useLocation} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import './index.css'
 
 const Result = () => {
   const location = useLocation();
   const data = location.state;
+
+  const endpoint = "http://localhost:3001/v1/short";
+  const body = JSON.stringify({
+    url: data.url
+  });
 
   const [response, setResponse] = useState({});
 
@@ -14,7 +19,7 @@ const Result = () => {
     "https://jsonplaceholder.typicode.com/posts",
     {
       method: 'POST',
-      body: JSON.stringify({url: data.url}),
+      body,
       headers: {'Content-type': 'application/json; charset=UTF-8'}
     }
   )
