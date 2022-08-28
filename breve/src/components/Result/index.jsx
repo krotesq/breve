@@ -12,9 +12,7 @@ const Result = () => {
     url: data.url
   });
 
-  const [response, setResponse] = useState({});
-
-  // "https://jsonplaceholder.typicode.com/posts"
+  const [shortUrl, setShortUrl] = useState('n/a');
 
   useEffect(() => {
   fetch(
@@ -27,13 +25,14 @@ const Result = () => {
   )
   .then(res => res.json())
   .then(res => {
-    setResponse(res);
+    console.log(res)
+    setShortUrl(res.data.shortUrl);
   })
 }, [])
 
   return (
     <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
-        <h2>Short URL: {response.short_url}</h2>
+        <h2>Short URL: {shortUrl}</h2>
     </motion.div>
   )
 }
