@@ -1,10 +1,15 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { motion } from 'framer-motion'
+
+// routes
 import Input from '../Input'
 import Result from '../Result'
+import Redirect from '../Redirect'
 
+// style
 import './index.css'
+
 
 const Box = () => {
   return (
@@ -13,10 +18,11 @@ const Box = () => {
           <Routes>
             <Route path='/' element={<Input/>}/>
             <Route path='/result' element={<Result/>}/>
+            <Route path='/:id' element={<Redirect/>}/>
           </Routes>
         </Router>
       <a href="#" id='report'>Report a problem</a>
-      <p>Made with ♥ by <a href="https://github.com/aaronlyy" className='inlineHref'>aaronlyy</a> &amp; <a href="https://github.com/6senit" className='inlineHref'>6senit</a></p>
+      <p>Made with ♥ by <a href="https://github.com/aaronlyy" className='inlineHref'>aaronlyy</a>, <a href="https://github.com/6senit" className='inlineHref'>6senit</a> &amp; <a href="https://github.com/noashz" className='inlineHref'>noahshz</a></p>
     </motion.div>
   )
 }

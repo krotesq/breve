@@ -21,8 +21,20 @@ const Input = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
     if (isURL(inputUrl)) {
-      navigate('/result', {state: {url: inputUrl}})
+      fetch(
+        'http://127.0.0.1:3001/v1/short',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            url: inputUrl
+          }),
+          headers: {'Content-type': 'application/json; charset=UTF-8'}
+        }
+      )
+      .then(res => res.json())
+      .then(res => navigate('/result', {state: {shortUrl: res.data.shortUrl}}))
     }
     setHeadline('Please put in a valid URL!');
   }
