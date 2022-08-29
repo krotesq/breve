@@ -2,10 +2,9 @@ import {React, useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 
 const Redirect = () => {
-
-    const [longUrl, setLongUrl] = useState('n/a');
-
     const params = useParams();
+
+    const [status, setStatus] = useState('Redirecting...');
 
     useEffect(() => {
       // get longUrl from api
@@ -18,14 +17,19 @@ const Redirect = () => {
           headers: {'Content-type': 'application/json; charset=UTF-8'}
         }
       )
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(res => res.data.longUrl)
-      .then(res => window.location.replace(res))
+      .then((res) => {
+        if (res) {
+          window.location.replace(res);
+        }
+        setStatus('Not found!');
+      })
     }, [])
 
   return ( 
       <div className='Redirect'>
-          <h3>Redirecting...</h3>
+          <h3>{status}</h3>
       </div>
   )
 }
