@@ -22,7 +22,7 @@ const Redirect = () => {
       .then((res) => {
         if (res) {
           console.log(res);
-          window.location.replace(res);
+          window.location = res;
         }
         setStatus('Not found :(');
       })
