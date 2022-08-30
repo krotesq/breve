@@ -21,9 +21,10 @@ const Redirect = () => {
       .then(res => res.data.longUrl)
       .then((res) => {
         if (res) {
+          console.log(res);
           window.location.replace(res);
         }
-        setStatus('Not found!');
+        setStatus('Not found :(');
       })
     }, [])
 
