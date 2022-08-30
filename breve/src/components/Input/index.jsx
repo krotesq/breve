@@ -24,7 +24,7 @@ const Input = () => {
 
     if (isURL(inputUrl)) {
       fetch(
-        'http://127.0.0.1:3001/v1/short',
+        'http://api.breve.club/v1/short',
         {
           method: 'POST',
           body: JSON.stringify({
