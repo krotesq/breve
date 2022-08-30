@@ -9,7 +9,7 @@ const Redirect = () => {
     useEffect(() => {
       // get longUrl from api
       const code = params.id;
-      const endpoint = `http://api.breve.club/v1/short?code=${code}`;
+      const endpoint = `https://api.breve.club/v1/short?code=${code}`;
       fetch(
         endpoint,
         {
