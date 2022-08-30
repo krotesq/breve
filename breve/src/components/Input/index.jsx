@@ -23,7 +23,7 @@ const Input = () => {
     e.preventDefault();
 
     if (isURL(inputUrl)) {
-      fetch(
+      fetch (
         'https://api.breve.club/v1/short',
         {
           method: 'POST',
@@ -36,7 +36,9 @@ const Input = () => {
       .then(res => res.json())
       .then(res => navigate('/result', {state: {shortUrl: res.data.shortUrl}}))
     }
-    setHeadline('Please put in a valid URL!');
+    else {
+      setHeadline('Please put in a valid URL!');
+    }
   }
 
   return (
