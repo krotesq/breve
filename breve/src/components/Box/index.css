@@ -1,12 +1,12 @@
 .Box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 60vh;
     width: 100vw;
     background-color: #1c1c1e;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 
 @media screen and (min-width:768px) {

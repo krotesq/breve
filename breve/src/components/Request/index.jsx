@@ -35,7 +35,6 @@ const Request = () => {
         if (!response.success) {
             return;
         }
-        console.log(response);
         navigate('/response', {state: {shortUrl: response.data.shortUrl}});
     }
 
@@ -44,7 +43,7 @@ const Request = () => {
             <h3>Let's short your link!</h3>
             <form className='Request__form' onSubmit={handleFormSubmit}>
                 <input type="text" id='txtLongUrl' name='longUrl' placeholder='Enter a link...' value={longUrl} onChange={handleChangeUrl} required autoComplete='off'/>
-                <input type="text" id='txtCustomCode' name='customCode' placeholder='Enter a custom code' value={customCode} onChange={handleChangeCode} autoComplete='off'/>
+                <input type="text" id='txtCustomCode' name='customCode' placeholder='Enter a custom code... (optional)' value={customCode} onChange={handleChangeCode} autoComplete='off'/>
                 <input type="button" id='btnPaste' value='Paste URL from clipboard' onClick={handleClickPaste}/>
                 <input type="submit" id='btnSubmit' value='Submit'/>
             </form>
