@@ -19,3 +19,7 @@ body {
   align-items: center;
   overflow: hidden;
 }
+
+div {
+  border: 1px solid green;
+}

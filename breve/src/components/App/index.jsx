@@ -1,14 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Dashboard from '../Dashboard'
 
 // component imports
 import Main from '../Main'
 import Box from '../Box'
 import Request from '../Request'
 import Response from '../Response'
-
-
-import './index.css'
+import Dashboard from '../Dashboard'
 
 function App() {
   return (

@@ -1,10 +1,11 @@
+import './index.css'
+
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 const Box = () => {
   return (
-    <div>
-        <h3>Box</h3>
+    <div className='Box'>
         <Outlet/>
     </div>
   )
