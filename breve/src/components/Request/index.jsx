@@ -1,10 +1,14 @@
 import './index.css'
-
 import isURL from 'validator/lib/isURL'
-
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+
+import config from '../../config/app.config'
+import { post } from '../../util/asyncfetch'
 
 const Request = () => {
+
+    const navigate = useNavigate();
 
     const [longUrl, setLongUrl] = useState('');
     const [customCode, setCustomCode] = useState('');
@@ -24,17 +28,22 @@ const Request = () => {
 
     const handleClickSubmit = async (e) => {
         e.preventDefault();
-        // validate if longUrl is a valid URL
         if (!isURL(longUrl)) {
             return;
         }
+        const response = await post(`https://${config.API_BASE}/v1/short`, {url: longUrl, cid: customCode})
+        if (!response.success) {
+            return;
+        }
+        console.log(response);
+        navigate('/response', {state: {shortUrl: response.data.shortUrl}});
     }
 
     return (
         <div className='Request'>
             <form className='Request__form'>
-                <input type="text" id='txtLongUrl' name='longUrl' placeholder='Enter a link...' value={longUrl} onChange={handleChangeUrl}/>
-                <input type="text" id='txtCustomCode' name='customCode' placeholder='Enter a custom code' value={customCode} onChange={handleChangeCode}/>
+                <input type="text" id='txtLongUrl' name='longUrl' placeholder='Enter a link...' value={longUrl} onChange={handleChangeUrl} required autoComplete='off'/>
+                <input type="text" id='txtCustomCode' name='customCode' placeholder='Enter a custom code' value={customCode} onChange={handleChangeCode} autoComplete='off'/>
                 <input type="button" id='btnPaste' value='Paste URL from clipboard' onClick={handleClickPaste}/>
                 <input type="submit" id='btnSubmit' value='Submit' onClick={handleClickSubmit}/>
             </form>
