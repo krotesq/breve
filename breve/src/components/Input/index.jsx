@@ -33,13 +33,13 @@ const Input = () => {
       return;
     }
 
-    if (cid.length > 0) {
-      const success = await get(`https://api.breve.club/v1/short?code=${cid}`).success;
-      if (success) {
-        setHeadline('Custom ID already in use');
-        return;
-      }
-    }
+    // if (cid.length > 0) {
+    //   const success = await get(`https://api.breve.club/v1/short?code=${cid}`).success;
+    //   if (success) {
+    //     setHeadline('Custom ID already in use');
+    //     return;
+    //   }
+    // }
 
     const shortResponse = await post('https://api.breve.club/v1/short', {url, cid});
     if (!shortResponse.success) {
