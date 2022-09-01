@@ -1,13 +1,15 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import Header from '../Header'
 
-const Box = () => {
+const Main = () => {
   return (
     <div>
-        <h3>Box</h3>
+        <h1>Main</h1>
+        <Header/>
         <Outlet/>
     </div>
   )
 }
 
-export default Box
+export default Main
