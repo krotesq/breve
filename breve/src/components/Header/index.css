@@ -5,3 +5,12 @@
     align-items: center;
     height: 40vh;
 }
+
+.Header h1 {
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.Header h2 {
+    font-size: 2rem;
+}

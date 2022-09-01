@@ -1,6 +1,6 @@
 const config = {
-    HEADING: 'Breve',
-    SUBHEADING: 'Linksize matters!',
+    HEADING: 'BREVE',
+    SUBHEADING: 'LINKSIZE MATTERS!',
     API_BASE: 'api.breve.club',
 };
 

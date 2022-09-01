@@ -1,0 +1,15 @@
+.Footer {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#report {
+    color: rgb(168, 0, 0);
+}
+
+.Footer p > a{
+    color: white;
+}
