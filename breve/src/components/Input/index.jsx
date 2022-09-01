@@ -46,8 +46,8 @@ const Input = () => {
       <h3 className='Input__headline'>{headline}</h3>
       <form onSubmit={handleFormSubmit}>
           <input type="text" name="url" id="url" placeholder='Enter a link..' value={inputUrl} onChange={handleInputChange} required autoComplete="off"/>
-          <motion.input type='button' value='Paste from clipboard' onClick={async () => {await handlePasteClick()}} whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
-          <motion.input type='submit' value="Submit" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
+          <motion.input type='button' id='paste' value='Paste from clipboard' onClick={async () => {await handlePasteClick()}} whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
+          <motion.input type='submit' id='submit' value="Submit" whileHover={{scale: 1.02, cursor: 'pointer'}} whileTap={{scale: 0.98}}/>
       </form>
     </div>
   )
