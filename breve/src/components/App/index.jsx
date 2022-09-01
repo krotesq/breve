@@ -15,18 +15,18 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+
           {/* Main (/)*/}
           <Route path='' element={<Main/>}>
             <Route path='' element={<Box/>}>
               <Route path='' element={<Request/>}/>
               <Route path='response' element={<Response/>}/>
             </Route>
-
           </Route>
+
           {/* Dashboard */}
-          <Route path='dashboard' element={<Dashboard/>}>
+          <Route path='dashboard' element={<Dashboard/>}></Route>
 
-          </Route>
         </Routes>
       </Router>
     </div>
