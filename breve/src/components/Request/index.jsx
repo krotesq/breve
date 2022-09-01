@@ -26,7 +26,7 @@ const Request = () => {
         setLongUrl(await navigator.clipboard.readText());
     }
 
-    const handleClickSubmit = async (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         if (!isURL(longUrl)) {
             return;
@@ -41,11 +41,11 @@ const Request = () => {
 
     return (
         <div className='Request'>
-            <form className='Request__form'>
+            <form className='Request__form' onSubmit={handleFormSubmit}>
                 <input type="text" id='txtLongUrl' name='longUrl' placeholder='Enter a link...' value={longUrl} onChange={handleChangeUrl} required autoComplete='off'/>
                 <input type="text" id='txtCustomCode' name='customCode' placeholder='Enter a custom code' value={customCode} onChange={handleChangeCode} autoComplete='off'/>
                 <input type="button" id='btnPaste' value='Paste URL from clipboard' onClick={handleClickPaste}/>
-                <input type="submit" id='btnSubmit' value='Submit' onClick={handleClickSubmit}/>
+                <input type="submit" id='btnSubmit' value='Submit'/>
             </form>
         </div>
     )
