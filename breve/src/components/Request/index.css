@@ -1,6 +1,47 @@
+.Request {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
 .Request__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.Request__form input {
+    width: 100%;
+    margin: .45rem;
+    height: 2.8rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.Request__form input[type='text'] {
+    background-color: #2c2c2e;
+    padding: 1rem;
+}
+
+.Request__form input[type='button'] {
+    background-color: #2c2c2e
+}
+
+.Request__form input[type='submit'] {
+    background-color: #3b82f7
+}
+
+@media screen and (min-width:768px) {
+    .Request {
+        padding: 4rem;
+    }
 }
